@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8-sample-flask-celery
+  labels:
+    app: k8-sample-flask-celery
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: k8-sample-flask-celery
+    spec:
+      containers:
+      - name: k8-sample-flask-celery-container
+        # Replace  with your project ID or use `make template`
+        image: shuklaabhishek/k8-sample-flask-celery:latest
+        command: ['uwsgi', 'wsgi.ini']
+        # This setting makes nodes pull the docker image every time before
+        # starting the pod. This is useful when debugging, but should be turned
+        # off in production.
+        imagePullPolicy: Always
+        env:
+        - name: DATABASE_USER
+          value: ms
+        - name: DATABASE_PASSWORD
+          value: ms
+        ports:
+        - containerPort: 5000
