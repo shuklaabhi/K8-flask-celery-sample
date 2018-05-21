@@ -4,4 +4,4 @@ A sample application built on flask, celery, redis, rabbitmq, postgresql with ku
 Deploy on :
 -----------
 
-[Minikube Kubernetes](https://github.com/shuklaabhi/K8-flask-celery-sample/deploy/kubernetes/DEPLOY.md)
+[Minikube Kubernetes](https://github.com/shuklaabhi/K8-flask-celery-sample/blob/master/deploy/kubernetes/DEPLOY.md)

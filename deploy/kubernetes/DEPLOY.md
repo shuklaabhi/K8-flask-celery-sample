@@ -26,7 +26,7 @@ kubectl create -f deploy/kubernetes/webcelery/
 
 <img
   src="./kubernetes.png"
-  alt="Flask-Scarf"
+  alt="MiniKube Dashboard"
   width="500"
 />
 
