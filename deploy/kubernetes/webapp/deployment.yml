@@ -5,6 +5,11 @@ metadata:
   labels:
     app: k8-sample-flask-celery
 spec:
+  selector:
+    matchLabels:
+      app: k8-sample-flask-celery
+  strategy:
+    type: Recreate
   replicas: 3
   template:
     metadata:
@@ -20,10 +25,14 @@ spec:
         # starting the pod. This is useful when debugging, but should be turned
         # off in production.
         imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
         env:
         - name: DATABASE_USER
           value: ms
         - name: DATABASE_PASSWORD
           value: ms
-        ports:
-        - containerPort: 5000
+        - name: BROKER_URL
+          value: amqp://guest:guest@rabbitmq-service:5672
+        - name: RESULT_BACKEND_URL
+          value: redis://redis-master:6379/1

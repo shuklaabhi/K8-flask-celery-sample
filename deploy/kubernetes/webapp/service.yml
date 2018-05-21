@@ -8,6 +8,6 @@ spec:
   type: LoadBalancer
   ports:
   - port: 80
-    targetPort: 8080
+    targetPort: 5000
   selector:
     app: k8-sample-flask-celery

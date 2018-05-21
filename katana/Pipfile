@@ -1,0 +1,15 @@
+[[source]]
+verify_ssl = true
+name = "pypi"
+url = "https://pypi.org/simple"
+
+[packages]
+redis = "==2.10.6"
+celery = "==4.1.1"
+Flask = "==1.0.2"
+uWSGI = "==2.0.17"
+
+[requires]
+python_version = "3.6"
+
+[dev-packages]

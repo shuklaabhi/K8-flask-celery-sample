@@ -1,7 +1,7 @@
 import os
 
-broker_url = 'amqp://guest:guest@localhost:5672/' #'redis://' #os.environ.get('BROKER_URL')
-result_backend = "redis://localhost/1"
+broker_url = os.environ.get('BROKER_URL')
+result_backend = os.environ.get('RESULT_BACKEND_URL') #"redis://localhost/1"
 
 task_serializer = 'json'
 result_serializer = 'json'
